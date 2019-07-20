@@ -5,6 +5,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,9 @@ public class Ebay  {
         String result= driver.findElement(By.xpath("//h1[@class='srp-controls__count-heading']")).getText() ;
         driver.findElement(By.xpath("//span[text()='All']")).click();
         String result2=driver.findElement(By.xpath("//h1[@class='srp-controls__count-heading']")).getText();
+
+
+
 
 
         System.out.println(  result  );
@@ -43,6 +47,18 @@ public class Ebay  {
             System.out.println("Test is failed");
         }
 
+        driver.navigate().back();
+        Library.sleep(2);
+        System.out.println( "*****"+driver.getPageSource().contains("wooden spoon")  );
+
+        driver.navigate().back();
+        Library.sleep(2);
+
+        System.out.println( "*****"+driver.getPageSource().contains("wooden spoon")  );
+
+      //  String initialSearchBox = driver.findElement(By.id("gh-ac")).getText();
+
+       // System.out.println(  initialSearchBox.isEmpty()? "Initial Search is Empty": "Initial Search is Not empty");
 
 
 
